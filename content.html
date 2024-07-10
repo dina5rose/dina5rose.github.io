@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-container {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for nav */
+        }
+
+        nav {
+            background-color: transparent;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inria Sans', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        nav .left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a, nav .left a {
+            color: #5EBEC4;
+            text-decoration: none;
+        }
+
+        .content-title {
+            color: #000000;
+            font-family: 'Libre Baskerville', serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: absolute;
+            text-align: center;
+            top: 80px; /* Adjusted top position */
+            left: center; /* Adjusted left position */
+        }
+
+        .portfolio-item {
+            margin: 20px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 0; /* Remove rounded corners */
+        }
+
+        .portfolio-item img {
+            display: block;
+            width: 100%; /* Ensure the image fills its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .image-label {
+            margin-top: 10px; /* Adjust spacing between image and label */
+            font-size: 18px;
+            font-weight: 600;
+            color: #000000;
+            text-decoration: none; /* Remove underline */
+            text-align: center;
+        }
+
+        .tt-image {
+           top: 120px; /* Adjust top position for the web image */
+           left: -18%; /* Center horizontally */
+           width: 350px;
+           height: auto;
+           transform: translateX(-50%);
+           position: relative;
+        }
+
+        .tt2-image {
+           top: -734px; /* Adjust top position for the web image */
+           left: 14%; /* Center horizontally */
+           width: 350px;
+           height: auto;
+           transform: translateX(-50%);
+           position: relative;
+        }
+
+        .ig-image {
+           top: -1586px; /* Adjust top position for the web image */
+           left: 46%; /* Center horizontally */
+           width: 350px;
+           height: auto;
+           transform: translateX(-50%);
+           position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <div class="left">
+                <a href="homepage.html">Portfolio</a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="homepage.html #layer2">Course</a></li>
+                    <li><a href="homepage.html #layer3">Projects</a></li>
+                    <li><a href="homepage.html #layer4">Skills</a></li>
+                    <li><a href="homepage.html #layer6">Timeline</a></li>
+                    <li><a href="homepage.html #layer7">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="content-title">Content Creator</div>
+    <div style="height: 0px;"> <!-- Placeholder for content to show scrollbar -->
+    </div>
+
+    <div class="portfolio-item tt-image">
+        <a href="https://www.tiktok.com/@cotton.knot_my">
+           <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\content\1.jpg" alt="Cotton.Knot TT">
+        </a>
+        <div class="image-label">TikTok Cotton.Knot</div>
+    </div>
+
+    <div class="portfolio-item tt2-image">
+        <a href="https://www.tiktok.com/@warungdpadang">
+           <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\content\2.jpg" alt="ayam TT">
+        </a>
+        <div class="image-label">TikTok Warung D'Padang</div>
+    </div>
+
+    <div class="portfolio-item ig-image">
+        <a href="https://www.instagram.com/cotton.knot_my/">
+           <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\content\3.jpg" alt="Cotton.Knot IG">
+        </a>
+        <div class="image-label">Instagram Cotton.Knot</div>
+    </div>
+</body>
+</html>

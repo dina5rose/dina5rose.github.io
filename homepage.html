@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;700&family=Yeseva+One&family=Libre+Baskerville:wght@700&family=Lexend+Deca:wght@600&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            width: 1280px; /* Set the width of the body */
+            height: 3240px; /* Set the height of the body */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .nav-container {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for nav */
+        }
+
+        nav {
+            background-color: transparent;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inria Sans', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        nav .left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a, nav .left a {
+            color: #5EBEC4;
+            text-decoration: none;
+        }
+
+        .layer {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            padding: 20px;
+            overflow: hidden; /* Hide overflow to prevent scrolling */
+            position: relative;
+        }
+
+        .layer1 {
+            background-color: #FDF5DF;
+            padding-top: 60px; /* Adjust if needed to prevent content overlap with fixed nav */
+            flex-direction: row-reverse; /* Image on the left, text on the right */
+            height: 472px; /* Adjusted height */
+        }
+
+        .text-container {
+            max-width: 50%;
+            text-align: left;
+            padding: 0 20px; /* Adjust padding for spacing */
+            position: relative; /* Positioning for lines */
+            margin-top: -70px; /* Adjust top margin to position text below top line */
+        }
+
+        .text-container h2 {
+            font-family: 'Yeseva One', cursive; /* Use Yeseva One for "Hi, I’m" "Adina Aisyah" */
+            font-weight: normal; /* Regular */
+            font-size: 48px; /* Size: 48 */
+            margin: 5px;
+            color: #5EBEC4; /* First text color */
+        }
+
+        .text-container p {
+            font-family: 'Inria Sans', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            margin: 0px 0 0;
+            color: #F92C85; /* Second text color */
+        }
+
+        .image-container {
+            max-width: 50%;
+            text-align: left;
+            position: relative; /* Ensure relative positioning */
+        }
+
+        .image-container img {
+            border-radius: 26px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .linkedin-box {
+            position: absolute;
+            bottom: -60px;
+            left: 200;
+            width: 100%;
+            text-align: left;
+        }
+
+        .linkedin-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5EBEC4;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Inria Sans', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .linkedin-box a:hover {
+            background-color: #4CA6A7;
+        }
+
+        .line {
+            position: absolute; /* Absolute positioning */
+            width: 1px;
+            background-color: #000000;
+            opacity: 0.35;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .line.top {
+            height: 28px; /* Adjusted height */
+            left: 60px; /* Adjusted left position */
+            top: 114px; /* Adjusted top position */
+        }
+
+        .line.bottom {
+            height: 128px; /* Adjusted height */
+            left: 60px; /* Adjusted left position */
+            top: 217px; /* Adjusted top position */
+        }
+
+        .number {
+            position: absolute;
+            color: #000000;
+            font-family: 'Inria Sans', serif;
+            font-weight: 300;
+            font-size: 60px;
+            opacity: 0.4;
+            left: 28px; /* Adjusted left position */
+            top: 144px; /* Adjusted top position */
+        }
+
+        .introduce {
+            position: absolute;
+            color: #000000;
+            font-family: 'Inria Sans', serif;
+            font-weight: 300;
+            font-size: 24px;
+            opacity: 0.4;
+            left: 45px; /* Adjusted left position */
+            top: 480px; /* Adjusted top position */
+            transform: rotate(-90deg); /* Rotate 90 degrees */
+            transform-origin: left top; /* Rotate from left top */
+        }
+
+        .layer2 {
+            background-color: #FFB7C8;
+            padding-top: 60px; /* Adjust if needed to prevent content overlap with fixed nav */
+            flex-direction: row-reverse; /* Image on the left, text on the right */
+            height: 472px; /* Adjusted height */
+            position: relative; /* Ensure relative positioning */
+        }
+
+        .layer2 .course-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 80px; /* Adjusted top position */
+            left: 238px; /* Adjusted left position */
+        }
+
+        .layer2 .sub-title {
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            color: #FDF5DF;
+            margin-bottom: 20px;
+            position: absolute;
+            text-align: center;
+            top: 140px; /* Adjusted top position */
+            left: 150px; /* Adjusted left position */
+        }
+
+        .layer2 .sub-title span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .layer2 .straight-line {
+            width: 310px;
+            height: 1px;
+            background-color: #000000;
+            opacity: 0.7;
+            margin: 20px auto;
+            position: absolute;
+            top: 310px; /* Adjusted top position */
+            left: 190px; /* Adjusted left position */
+        }
+
+        .layer2 .course-description {
+            font-family: 'Inder', sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+            color: #000000;
+            text-align: center;
+            left: 170px; /* Adjusted left position */
+            top: 340px; /* Adjusted top position */
+            position: absolute;
+        }
+
+        .layer2 .course-description span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .image-container img {
+            border-radius: 0px;
+            max-width: 100%; /* Adjust the width */
+            height: auto;
+        }
+
+        .image-container {
+           max-width: 33.33%; /* Each image takes up 1/3 of the container */
+           text-align: center; /* Center align the images */
+           margin-right: 20px; /* Add right margin for spacing */
+           position: relative; /* Ensure relative positioning */
+        }
+
+        .image-link-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the container full height */
+        }
+
+        .image-link-container a img {
+           max-width: 100%;
+           height: auto;
+           border: none; /* Remove any default border from the image */
+           transition: transform 0.3s ease; /* Add transition for hover effect */
+        }
+
+        .image-link-container a img:hover {
+           transform: scale(1.05); /* Slightly enlarge the image on hover */
+        }
+
+        .website-image {
+           top: -120px; /* Adjust top position for the web image */
+           left: 73%; /* Center horizontally */
+           width: 200px;
+           height: auto;
+           transform: translateX(-50%);
+        }
+
+        .animation-image {
+           top: 20%; /* Adjust top position for the animation image */
+           right: -378px; /* Adjust right position */
+           width: 200px;
+           height: auto;
+           transform: translateY(-50%);
+        }
+
+        .game-image {
+          bottom: -120px; /* Adjust bottom position for the game image */
+          left: -5%; /* Center horizontally */
+          width: 170px;
+          height: auto;
+          transform: translateX(-50%);
+        }
+
+        .course {
+            position: absolute;
+            color: #000000;
+            font-family: 'Inria Sans', serif;
+            font-weight: 300;
+            font-size: 24px;
+            opacity: 0.4;
+            left: 45px; /* Adjusted left position */
+            top: 450px; /* Adjusted top position */
+            transform: rotate(-90deg); /* Rotate 90 degrees */
+            transform-origin: left top; /* Rotate from left top */
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            position: absolute;
+            bottom: 80px; /* Adjust bottom position */
+        }
+
+        .box {
+            background-color: #FFD279; /* Box background color */
+            width: 160px; /* Box width */
+            height: 41px; /* Box height */
+            text-align: center; /* Center align text */
+            line-height: 41px; /* Vertically center text */
+            font-family: 'Lexend Deca', sans-serif; /* Font family */
+            font-size: 24px; /* Font size */
+            font-weight: 600; /* Semibold font weight */
+            color: #000000; /* Text color */
+        }
+
+        .animation-box {
+           top: 40%; /* Adjust top position for the animation box */
+           right: 100px; /* Adjust right position */
+           width: 160px;
+           height: 41px;
+           transform: translateY(-50%);
+        }
+
+        .website-box {
+           top: 18%; /* Adjust top position for the animation box */
+           right: 290px; /* Adjust right position */
+           width: 160px;
+           height: 41px;
+           transform: translateY(-50%);
+        }
+
+        .game-box {
+           top: 60%; /* Adjust top position for the animation box */
+           right: 390px; /* Adjust right position */
+           width: 160px;
+           height: 41px;
+           transform: translateY(-50%);
+        }
+
+        .layer3 {
+            background-color: #5EBEC4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+            height: 512px; /* Adjusted height */
+            position: relative; /* Ensure relative positioning */
+        }
+
+        .layer3 .projects-title {
+            color: #FDF5DF;
+            font-family: 'Libre Baskerville', serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: absolute;
+            text-align: center;
+            top: 80px; /* Adjusted top position */
+            left: center; /* Adjusted left position */
+        }
+
+        .image-box {
+           max-width: 33.33%; /* Each image takes up 1/3 of the container */
+           text-align: center; /* Center align the images */
+           margin-right: 20px; /* Add right margin for spacing */
+           position: relative; /* Ensure relative positioning */
+        }
+
+        .image-box img {
+            border-radius: 28px;
+            max-width: 100%; /* Adjust the width */
+            height: auto;
+        }
+
+        .image-label {
+            margin-top: 10px; /* Adjust spacing between image and label */
+            font-size: 24px;
+            font-weight: 600;
+            color: #FDF5DF;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .image-link-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the container full height */
+        }
+
+        .image-link-container a img {
+           max-width: 100%;
+           height: auto;
+           border: none; /* Remove any default border from the image */
+           transition: transform 0.3s ease; /* Add transition for hover effect */
+        }
+
+        .image-link-container a img:hover {
+           transform: scale(1.05); /* Slightly enlarge the image on hover */
+        }
+
+        .photo-image {
+           top: 50px; /* Adjust top position for the photo image */
+           left: 5%; /* Center horizontally */
+           width: 210px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 22px;
+        }
+
+        .bisnes-image {
+           top: 50px; /* Adjust top position for the bisnes image */
+           left: 10%; /* Center horizontally */
+           width: 210px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 22px;
+        }
+
+        .content-image {
+           top: 50px; /* Adjust top position for the web image */
+           left: 15%; /* Center horizontally */
+           width: 210px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 22px;
+        }
+
+        .design-image {
+           top: 50px; /* Adjust top position for the web image */
+           left: 20%; /* Center horizontally */
+           width: 210px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 22px;
+        }
+
+        .projects {
+            position: absolute;
+            color: #000000;
+            font-family: 'Inria Sans', serif;
+            font-weight: 300;
+            font-size: 24px;
+            opacity: 0.4;
+            left: 45px; /* Adjusted left position */
+            top: 462px; /* Adjusted top position */
+            transform: rotate(-90deg); /* Rotate 90 degrees */
+            transform-origin: left top; /* Rotate from left top */
+        }
+        
+        .layer4 {
+            background-color: #FDF5DF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #000000;
+            height: 512px; /* Adjusted height */
+        }
+
+        .layer4 .skills-title {
+            color: #000000;
+            font-family: 'Libre Baskerville', serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: absolute;
+            text-align: center;
+            top: 80px; /* Adjusted top position */
+            left: center; /* Adjusted left position */
+        }
+
+        .skills {
+            position: absolute;
+            color: #000000;
+            font-family: 'Inria Sans', serif;
+            font-weight: 300;
+            font-size: 24px;
+            opacity: 0.4;
+            left: 45px; /* Adjusted left position */
+            top: 444px; /* Adjusted top position */
+            transform: rotate(-90deg); /* Rotate 90 degrees */
+            transform-origin: left top; /* Rotate from left top */
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .skills-box {
+            margin-bottom: 20px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .eng-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: 87px; /* Adjust top position */
+            left: 56px; /* Adjust left position */
+        }
+
+        .eng-level {
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: 76px; /* Adjust top position */
+            left: 273px; /* Adjust left position */
+        }
+
+        .eng-image {
+            width: 278px;
+            height: 16px;
+            position: relative; /* Enables positioning */
+            top: 76px; /* Adjust top position */
+            left: 150px;
+        }
+        
+        .mly-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: 127px; /* Adjust top position */
+            left: 46px; /* Adjust left position */
+        }
+
+        .mly-level {
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: 116px; /* Adjust top position */
+            left: 268px; /* Adjust left position */
+        }
+
+        .mly-image {
+            width: 278px;
+            height: 16px;
+            position: relative; /* Enables positioning */
+            top: 116px; /* Adjust top position */
+            left: 150px;
+        }
+
+        .comm-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: 167px; /* Adjust top position */
+            left: 103px; /* Adjust left position */
+        }
+
+        .comm-level {
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: 156px; /* Adjust top position */
+            left: 273px; /* Adjust left position */
+        }
+
+        .comm-image {
+            width: 278px;
+            height: 16px;
+            position: relative; /* Enables positioning */
+            top: 156px; /* Adjust top position */
+            left: 150px;
+        }
+
+        .inter-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: -108px; /* Adjust top position */
+            left: 539px; /* Adjust left position */
+        }
+
+        .inter-level {
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: -120px; /* Adjust top position */
+            left: 723px; /* Adjust left position */
+        }
+
+        .inter-image {
+            width: 278px;
+            height: 16px;
+            position: relative; /* Enables positioning */
+            top: -120px; /* Adjust top position */
+            left: 600px;
+        }
+
+        .org-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: -68px; /* Adjust top position */
+            left: 547px; /* Adjust left position */
+        }
+
+        .org-level {
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: -80px; /* Adjust top position */
+            left: 723px; /* Adjust left position */
+        }
+
+        .org-image {
+            width: 278px;
+            height: 16px;
+            position: relative; /* Enables positioning */
+            top: -80px; /* Adjust top position */
+            left: 600px;
+        }
+
+        .creativity-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: -28px; /* Adjust top position */
+            left: 517px; /* Adjust left position */
+        }
+
+        .creativity-level {
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            color: #000000;
+            position: relative; /* Enables positioning */
+            top: -40px; /* Adjust top position */
+            left: 723px; /* Adjust left position */
+        }
+
+        .creativity-image {
+            width: 278px;
+            height: 16px;
+            position: relative; /* Enables positioning */
+            top: -40px; /* Adjust top position */
+            left: 600px
+        }
+
+        .layer5 {
+            background-color: #FDF5DF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #000000;
+            height: 512px; /* Adjusted height */
+        }
+
+        .layer5 .soft-title {
+            color: #000000;
+            font-family: 'Libre Baskerville', serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: absolute;
+            text-align: center;
+            top: 15px; /* Adjusted top position */
+            left: 500px; /* Adjusted left position */
+        }
+
+        .image-box {
+           max-width: 33.33%; /* Each image takes up 1/3 of the container */
+           text-align: center; /* Center align the images */
+           margin-right: 20px; /* Add right margin for spacing */
+           position: relative; /* Ensure relative positioning */
+        }
+
+        .image-box img {
+            border-radius: 28px;
+            max-width: 100%; /* Adjust the width */
+            height: auto;
+        }
+
+        .ps-image {
+           top: 465px; /* Adjust top position for the photo image */
+           left: -23%; /* Center horizontally */
+           width: 17px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .id-image {
+           top: 374px; /* Adjust top position for the photo image */
+           left: -13%; /* Center horizontally */
+           width: 17px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .ai-image {
+           top: 283px; /* Adjust top position for the photo image */
+           left: -3%; /* Center horizontally */
+           width: 17px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .an-image {
+           top: 192px; /* Adjust top position for the photo image */
+           left: 7%; /* Center horizontally */
+           width: 17px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .xd-image {
+           top: -69px; /* Adjust top position for the photo image */
+           left: 17%; /* Center horizontally */
+           width: 17px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .ue-image {
+           top: 190px; /* Adjust top position for the photo image */
+           left: -35%; /* Center horizontally */
+           width: 50px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .my-image {
+           top: -40px; /* Adjust top position for the photo image */
+           left: -19%; /* Center horizontally */
+           width: 18px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .excel-image {
+           top: -148px; /* Adjust top position for the photo image */
+           left: -9%; /* Center horizontally */
+           width: 23px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .canva-image {
+           top: -260px; /* Adjust top position for the photo image */
+           left: -0.5%; /* Center horizontally */
+           width: 36px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .pp-image {
+           top: -370px; /* Adjust top position for the photo image */
+           left: 11%; /* Center horizontally */
+           width: 23px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 26px;
+        }
+
+        .words-image {
+           top: -485px; /* Adjust top position for the photo image */
+           left: 21%; /* Center horizontally */
+           width: 20px;
+           height: auto;
+           transform: translateX(-50%);
+        }
+
+        .layer6 {
+            background-color: #FFB7C8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #000000;
+            height: 512px; /* Adjusted height */
+        }
+
+        .layer6 .tl-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 20px;
+            top: 20px;
+        }
+
+        .timeline {
+            position: absolute;
+            color: #000000;
+            font-family: 'Inria Sans', serif;
+            font-weight: 300;
+            font-size: 24px;
+            opacity: 0.4;
+            left: 45px; /* Adjusted left position */
+            top: 460px; /* Adjusted top position */
+            transform: rotate(-90deg); /* Rotate 90 degrees */
+            transform-origin: left top; /* Rotate from left top */
+        }
+
+        .image-box {
+           max-width: 33.33%; /* Each image takes up 1/3 of the container */
+           text-align: center; /* Center align the images */
+           margin-right: 0px; /* Add right margin for spacing */
+           position: relative; /* Ensure relative positioning */
+        }
+
+        .image-box img {
+            border-radius: 28px;
+            max-width: 500%; /* Adjust the width */
+            height: auto;
+        }
+
+        .tl-image {
+           top: 20px; /* Adjust top position for the photo image */
+           left: -10%; /* Center horizontally */
+           width: 105px;
+           height: auto;
+           transform: translateX(-50%);
+           border-radius: 0px;
+        }
+        
+        .layer7 {
+            background-color: #5EBEC4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FDF5DF;
+            height: 50px; /* Adjusted height */
+        }
+
+        .layer7 .contact-title {
+            font-family: 'Inter', 'sans-serif';
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .layer7 .section-content {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            color: #FDF5DF;
+            text-align: left;
+            margin-left: 238px;
+            margin-top: -45px;
+        }
+
+        .layer7 .contact-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .layer7 .contact-links a img {
+            width: 30px; /* Adjust size as needed */
+            height: 25px; /* Adjust size as needed */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <div class="left">
+                <a href="#layer1">Portfolio</a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#layer2">Course</a></li>
+                    <li><a href="#layer3">Projects</a></li>
+                    <li><a href="#layer4">Skills</a></li>
+                    <li><a href="#layer6">Timeline</a></li>
+                    <li><a href="#layer7">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div id="layer1" class="layer layer1">
+            <div class="line top"></div>
+            <div class="number">01</div>
+            <div class="line bottom"></div>
+            <div class="introduce">INTRODUCE</div>
+            <div class="text-container">
+                <h2>Hi, I’m</h2>
+                <h2>Adina Aisyah</h2>
+                <p>I love learning new things!</p>
+                <p>My interest is listening to music and vlogging.</p>
+                <div class="linkedin-box">
+                    <a href="https://www.linkedin.com/in/nur-adina-aisyah-0893762ba/" target="_blank">Visit LinkedIn Profile</a>
+                </div>
+            </div>
+        <div class="image-container">
+            <img src="C:\Users\60124\Downloads\11-removebg-preview.png" alt="Self Portrait">
+        </div>
+    </div>    
+
+    <div id="layer2" class="layer layer2">
+        <div id="layer2" class="layer layer2">
+            <div class="line top"></div>
+            <div class="number">02</div>
+            <div class="line bottom"></div>
+            <div class="course">COURSE</div>
+            <div class="course-title">My course:</div>
+            <div class="sub-title">Diploma In New Media <span>Communication And <br>Contentpreneurship <br>(MC111)</span></div>
+            <div class="straight-line"></div>
+            <div class="course-description">
+                <span>This course focuses on the latest trends</span>
+                <span>in the Web Content Development,</span>
+                <span>Digital Marketing, Animation and</span>
+                <span>Digital Games Creation.</span>
+            </div>
+        <div class="image-link-container">
+            <div class="image-container website-image">
+                <a href="website.html">
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\web\hmpg2.jpg" alt="Web Image">
+                </a>
+            </div>
+            <div class="image-container animation-image">
+                <a href="animate.html">
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\animation\hmpg2.jpg" alt="Animation Image">
+                </a>
+            </div>
+            <div class="image-container game-image">
+                <a href="game.html">
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\game\hmpg2.jpg" alt="Game Image">
+                </a>
+            </div>
+        </div>
+            <div class="box-container animation-box">
+                <div class="box">ANIMATION</div>
+            </div>
+            <div class="box-container website-box">
+                <div class="box">WEBSITE</div>
+            </div>
+            <div class="box-container game-box">
+                <div class="box">GAME</div>
+            </div>
+        </div>    
+    </div>
+
+    <div id="layer3" class="layer layer3">
+        <div class="line top"></div>
+            <div class="number">03</div>
+            <div class="line bottom"></div>
+            <div class="projects">PROJECTS</div>
+        <div class="projects-title">My Projects</div>
+        <div class="image-link-container">
+        <div class="image-box photo-image">
+            <a href="photo.html">
+            <img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/photo/hmpg3.jpg" alt="Photo">
+            <div class="image-label">Photography</div>
+            </a>
+        </div>
+
+        <div class="image-box bisnes-image">
+            <a href="bisnes.html">
+            <img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/bisnes/hmpg3.jpg" alt="Business">
+            <div class="image-label">Business</div>
+            </a>
+        </div>
+
+        <div class="image-box content-image">
+            <a href="content.html">
+            <img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/content/hmpg3.jpg" alt="Content">
+            <div class="image-label">Content Creator</div>
+            </a>
+        </div>
+
+        <div class="image-box design-image">
+            <a href="graphic.html">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\design\hmpg3.jpg" alt="Designing">
+            <div class="image-label">Graphic Design</div>
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <div id="layer4" class="layer layer4">
+        <div class="line top"></div>
+            <div class="number">04</div>
+            <div class="line bottom"></div>
+            <div class="skills">SKILLS</div>
+        <div class="skills-title">Skills</div>
+
+        <div class="skills-container">
+            <div class="skill-box">
+                <div class="eng-title">English</div> 
+                <div class="eng-level">60%</div>
+                <img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/skills/english.jpg" alt="English Skill Level" class="eng-image">
+            
+                <div class="mly-title">Malay</div> 
+                <div class="mly-level">100%</div>
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\skills\malay.jpg" alt="Malay Skill Level" class="mly-image">
+
+                <div class="comm-title">Communication</div> 
+                <div class="comm-level">80%</div>
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\skills\organizational.jpg" alt="Communication Skill Level" class="comm-image">
+
+                <div class="inter-title">Interpersonal</div> 
+                <div class="inter-level">70%</div>
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\skills\creativity.jpg" alt="Interpersonal Skill Level" class="inter-image">
+
+                <div class="org-title">Organizational</div> 
+                <div class="org-level">80%</div>
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\skills\organizational.jpg" alt="Organizational Skill Level" class="org-image">
+
+                <div class="creativity-title">Creativity</div> 
+                <div class="creativity-level">70%</div>
+                <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\skills\creativity.jpg" alt="creativity Skill Level" class="creativity-image">
+            </div>
+        </div>
+    </div>
+
+    <div id="layer5" class="layer layer5">
+        <div class="soft-title">Software Skills</div>
+        <div class="image-box ps-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\photoshop.jpg" alt="Adobe Photoshop">
+        </div>
+
+        <div class="image-box id-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\indesign.jpg" alt="Adobe InDesign">
+        </div>
+
+        <div class="image-box ai-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\illustrator.jpg" alt="Adobe Illustrator">
+        </div>
+
+        <div class="image-box an-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\animate.jpg" alt="Adobe Animate">
+        </div>
+
+        <div class="image-box ue-image">
+            <img src="C:\Users\60124\Downloads\OIP-removebg-preview.png" alt="Unreal Engine">
+        </div>
+
+        <div class="image-box xd-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\xd.jpg" alt="Adobe XD">
+        </div>
+
+        <div class="image-box my-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\autodesk-maya-logo-F485ED50BF-seeklogo.com.png" alt="Autodesk Maya">
+        </div>
+
+        <div class="image-box excel-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\excell.png" alt="Microsoft Excel">
+        </div>
+
+        <div class="image-box canva-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\canva-logo-symbol-free-png-images.png" alt="Canva">
+        </div>
+
+        <div class="image-box pp-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\powerpoint-logo-300x300.png" alt="Microsoft PowerPoint">
+        </div>
+
+        <div class="image-box words-image">
+            <img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\software\logo-word.png" alt="Microsoft Word">
+        </div>
+    </div>
+
+    <div id="layer6" class="layer layer6">
+        <div class="line top"></div>
+            <div class="number">05</div>
+            <div class="line bottom"></div>
+            <div class="timeline">TIMELINE</div>
+        <div class="tl-title">My Journey</div>
+        <div class="image-box tl-image">
+            <img src="C:\Users\60124\OneDrive\Pictures\Screenshots\Screenshot 2024-07-08 220819.png" alt="timeline">
+        </div>
+    </div>
+
+    <div id="layer7" class="layer layer7">
+        <div class="contact-title">Copyright © 2024 by dina5rose</div>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/dina5rose/?hl=en" target="_blank"><img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/logo/ig.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/adina.aisyah.16" target="_blank"><img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/logo/fb.png" alt="Facebook"></a>
+            <a href="https://www.youtube.com/channel/UCmJT1OQiHPHBzbX_RKLlc6g" target="_blank"><img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/logo/yt.png" alt="YouTube"></a>
+            <a href="https://www.tiktok.com/@deeennarrrr" target="_blank"><img src="C:\Users\60124\OneDrive\Desktop\portfolio\img\logo\tiktok2.png" alt="TikTok"></a>
+            <a href="https://cl.gy/LZefM" target="_blank"><img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/logo/email.png" alt="Email"></a>
+            <a href="mailto:aaisyahdina12@gmail.com"><img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/logo/linkedIn.png" alt="LinkedIn"></a>
+            <a href="https://wa.link/ti13yo" target="_blank"><img src="C:/Users/60124/OneDrive/Desktop/portfolio/img/logo/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+    </div>
+</body>
+</html>
